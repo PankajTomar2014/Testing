@@ -1,8 +1,8 @@
 
-# Jest
+# [Jest](https://jestjs.io/docs/getting-started)
 Jest is the most commonly used library for unit testing and component testing in React Native. It's the default choice in many React Native projects and works well for testing JavaScript logic, components, and reducers.
 
-yarn add --dev jest ( Installed as dev Dependency )
+`yarn add --dev jest ( Installed as dev Dependency )`
 
     Testing Framework: Jest is primarily a testing framework developed by Facebook. It provides a complete solution for running tests, making assertions, and generating test reports.
 
@@ -15,11 +15,11 @@ yarn add --dev jest ( Installed as dev Dependency )
     Code Coverage: Jest can generate code coverage reports to help you assess the extent of your test coverage.
 
 
-# Enzyme:
+# [Enzyme](https://www.npmjs.com/package/enzyme)
 
 Enzyme is a JavaScript testing utility for React that was developed by Airbnb. It is commonly used for testing React components and their behavior. Enzyme provides a set of tools and APIs that make it easier to render, manipulate, and assert the behavior of React components during testing. It is designed to work seamlessly with popular testing frameworks like Jest, Mocha, and Chai.
 
-npm i --save-dev enzyme enzyme-adapter-react-16
+`npm i --save-dev enzyme enzyme-adapter-react-16`
 
     Testing Utility: Enzyme, on the other hand, is a testing utility for React that is often used in conjunction with Jest (or other testing frameworks). It is developed by Airbnb.
 
@@ -30,10 +30,12 @@ npm i --save-dev enzyme enzyme-adapter-react-16
     Component Testing: Enzyme is well-suited for testing the behavior and structure of React components and can interact with them in a way that resembles how a user would.
 
 
-# Mocha:
+# [Mocha](https://mochajs.org/#installation)
 
 Mocha is a widely used JavaScript testing framework that can be used for testing both Node.js applications and web applications. It provides a flexible and extensible testing environment, making it a popular choice for test-driven development (TDD) and behavior-driven development (BDD) in the JavaScript ecosystem.
 
+`npm install --save-dev mocha`
+    
     Key features and characteristics of Mocha include:
 
     Test Framework Agnostic: Mocha is test framework-agnostic, which means it can work with various assertion libraries and mocking frameworks. You can use your preferred tools to write assertions and mocks, making Mocha highly adaptable to your testing needs.
