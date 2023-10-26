@@ -4,6 +4,13 @@ Jest is the most commonly used library for unit testing and component testing in
 
 `yarn add --dev jest ( Installed as dev Dependency )`
 
+`yarn jest --clearCache`
+        or
+`npx jest --clearCache`
+
+  ###Clear the Jest Cache
+
+
     Testing Framework: Jest is primarily a testing framework developed by Facebook. It provides a complete solution for running tests, making assertions, and generating test reports.
 
     Features: Jest comes with a test runner, assertion library, mocking capabilities, and other utilities for testing JavaScript code, including React components. It's known for its simplicity and ease of use.
@@ -53,6 +60,17 @@ Mocha is a widely used JavaScript testing framework that can be used for testing
     Extensibility: Mocha is highly extensible, and you can incorporate various plugins and libraries to enhance its functionality. For example, you can use libraries like Chai for assertions, Sinon for mocking, and Supertest for API testing.
 
     Community Support: Mocha has a large and active community, which means you can find a wealth of resources, plugins, and community-contributed extensions to help with your testing needs.
+
+
+# Jest Configuration
+
+In "jest.config.js" file
+
+module.exports = {  
+  setupFilesAfterEnv: ['@testing-library/jest-native/extend-expect'],
+};
+
+
 
 # Testing Folder 
     Unit : This directory is for unit tests. Each component or module in your src folder should have a corresponding test file in this directory.
