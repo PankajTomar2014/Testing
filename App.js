@@ -10,9 +10,9 @@ export default class App extends Component {
     };
   }
 
-  addTwoNumbers = (a, b) => {
+  addTwoNumbers = (a, b,c) => {
     this.setState({stateNumber: a + b});
-
+    return a+b;
     // return this.state.stateNumber;
   };
 

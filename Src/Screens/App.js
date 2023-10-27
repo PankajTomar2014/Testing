@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import {StyleSheet, SafeAreaView, ImageBackground, } from 'react-native';
-import { CustomeButton, Input } from '../Components/Button';
+import { CustomeButton, Input, TitleText } from '../Components/Button';
 
 const App = () => {
   const [email, setEmail] = useState('');
@@ -13,8 +13,8 @@ const App = () => {
       alert('Please fill in all fields..');
       return;
     }
-    console.log('Email:', email);
-    console.log('Password:', password);
+    console.log('Email:=======>', email);
+    console.log('Password:=====>', password);
   };
 
   return (
@@ -23,6 +23,8 @@ const App = () => {
         style={styles.container}
         source={require('../Assets/Images/backImage.jpg')}
       >
+
+        <TitleText msg={'Login Screen'}/>
         <Input
           placeholder={"Email"}
           value={email}
@@ -41,7 +43,7 @@ const App = () => {
           style={{marginTop:20}}
           onPress={handleLogin}
 
-        />
+        />      
       </ImageBackground>
       
     </SafeAreaView>

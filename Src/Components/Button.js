@@ -38,6 +38,16 @@ export const HidePassword = props => {
   );
 };
 
+
+export const TitleText = (props) =>{
+  const { msg } = props
+  return (
+    <View style={{marginVertical:10,alignSelf:"center",alignItems:"center",justifyContent:"center"}}>
+      <Text style={{fontSize:20,color:"green",fontWeight:"bold"}}>{msg}</Text>
+    </View>
+  )
+}
+
 const styles = StyleSheet.create({
   touchStyle: {
     alignSelf: 'center',
