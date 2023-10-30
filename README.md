@@ -79,3 +79,106 @@ module.exports = {
 
     setupTests.js: This file is used to set up the testing environment. You can configure testing libraries and add global configurations here.
 
+# "describe":
+"describe" is used to create a test suite, which is a way to group related test cases together. Test suites are used to organize and structure your tests, making it easier to manage and understand the test suite's purpose.
+It is typically used to define a block of related tests or to group tests that are testing a specific component, module, or feature.
+The "describe" block can contain other "describe" blocks, creating a hierarchical structure for organizing your tests.
+
+#### Example
+```javascript
+describe('Math Operations', () => {
+  // This is a test suite for math operations.
+  // It can contain multiple related test cases.
+  // ...
+});
+```
+
+# "test":
+"test" is used to define an individual test case within a test suite. It specifies a specific behavior that you want to test and provides a function that contains the test code.
+Each "test" represents one particular assertion or expectation you want to make about your code. If the assertion within a test case fails, it indicates a problem in your code.
+"test" is typically used within a "describe" block to define multiple test cases within a suite.
+
+#### Example
+```javascript
+describe('Math Operations', () => {
+  test('Addition', () => {
+    // This is a specific test case to check addition functionality.
+    // ...
+  });
+
+  test('Subtraction', () => {
+    // This is another test case to check subtraction functionality.
+    // ...
+  });
+});
+```
+
+# Truthiness
+    In tests, you sometimes need to distinguish between undefined, null, and false, but you sometimes do not want to treat these differently. Jest contains helpers that let you be explicit about what you want.
+
+    toBeNull matches only null
+    toBeUndefined matches only undefined
+    toBeDefined is the opposite of toBeUndefined
+    toBeTruthy matches anything that an if statement treats as true
+    toBeFalsy matches anything that an if statement treats as false
+
+  ## For example:
+
+```javascript
+    test('null', () => {
+      const n = null;
+      expect(n).toBeNull();
+      expect(n).toBeDefined();
+      expect(n).not.toBeUndefined();
+      expect(n).not.toBeTruthy();
+      expect(n).toBeFalsy();
+    });
+
+    test('zero', () => {
+      const z = 0;
+      expect(z).not.toBeNull();
+      expect(z).toBeDefined();
+      expect(z).not.toBeUndefined();
+      expect(z).not.toBeTruthy();
+      expect(z).toBeFalsy();
+    });
+```
+
+# Order of Execution
+
+ Jest executes all describe handlers in a test file before it executes any of the actual tests. This is another reason to do setup and teardown inside before* and after* handlers rather than inside the describe blocks. Once the describe blocks are complete, by default Jest runs all the tests serially in the order they were encountered in the collection phase, waiting for each to finish and be tidied up before moving on.
+
+ #### Consider the following illustrative test file and output:
+```javascript
+describe('describe outer', () => {
+  console.log('describe outer-a');
+
+  describe('describe inner 1', () => {
+    console.log('describe inner 1');
+
+    test('test 1', () => console.log('test 1'));
+  });
+
+  console.log('describe outer-b');
+
+  test('test 2', () => console.log('test 2'));
+
+  describe('describe inner 2', () => {
+    console.log('describe inner 2');
+
+    test('test 3', () => console.log('test 3'));
+  });
+
+  console.log('describe outer-c');
+});
+
+// describe outer-a
+// describe inner 1
+// describe outer-b
+// describe inner 2
+// describe outer-c
+// test 1
+// test 2
+// test 3
+```
+
