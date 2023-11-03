@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import {StyleSheet, SafeAreaView, ImageBackground, } from 'react-native';
 import { CustomeButton, Input, TitleText } from '../Components/Button';
 
-const App = () => {
+const App = (props) => {
+  console.log('props:=======>', props);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isHide,setIsHide] = useState(false)
@@ -41,7 +42,8 @@ const App = () => {
         <CustomeButton 
           btnText={"Submit"}
           style={{marginTop:20}}
-          onPress={handleLogin}
+          onPress={()=> props.navigation.navigate('Home')}
+          // onPress={handleLogin}
 
         />      
       </ImageBackground>
