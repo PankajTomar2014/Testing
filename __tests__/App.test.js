@@ -197,55 +197,55 @@ import { GET_API_URL,getAPI,POST_API_URL,postAPI} from './api';
 // // test 3
 // -----------------------------------------------------------------
 
-// describe('API testing', () => {
-//   let mock;
+describe('API testing', () => {
+  let mock;
 
-//   // This is a Jest hook function that runs before each test case within the test suite. 
-//   // In this beforeEach block, you are creating a new axios-mock-adapter instance and assigning it to the mock variable. 
-//   beforeEach(() => {
-//     mock = new MockAdapter(axios);    
-//   });
+  // This is a Jest hook function that runs before each test case within the test suite. 
+  // In this beforeEach block, you are creating a new axios-mock-adapter instance and assigning it to the mock variable. 
+  beforeEach(() => {
+    mock = new MockAdapter(axios);    
+  });
 
-//   // This is another Jest hook function that runs after each test case within the test suite. 
-//   // In this afterEach block, you are calling the restore method on the mock instance. 
-//   // The restore method is provided by axios-mock-adapter and is used to clean up and reset the Axios mock adapter to its original state.
+  // This is another Jest hook function that runs after each test case within the test suite. 
+  // In this afterEach block, you are calling the restore method on the mock instance. 
+  // The restore method is provided by axios-mock-adapter and is used to clean up and reset the Axios mock adapter to its original state.
 
-//   afterEach(() => {
-//     mock.restore();
-//   });
+  afterEach(() => {
+    mock.restore();
+  });
 
-//   test('testing GET Api', async () => {
-//     const responseData = [{
-//         "id": 2,
-//         "employee_name": "Pankaj Tomar",
-//         "employee_salary": 2000,
-//         "employee_age": 63,
-//         "profile_image": ""
-//     }];
-//     mock.onGet(GET_API_URL).reply(200, responseData);
-//     const data = await getAPI();
-//     expect(data).toEqual(responseData);
-//   });
+  test('testing GET Api', async () => {
+    const responseData = [{
+        "id": 2,
+        "employee_name": "Pankaj Tomar",
+        "employee_salary": 2000,
+        "employee_age": 63,
+        "profile_image": ""
+    }];
+    mock.onGet(GET_API_URL).reply(200, responseData);
+    const data = await getAPI();
+    expect(data).toEqual(responseData);
+  });
 
-//   test('testing POST Api', async () => {
-//     const requestData = {
-//               "title": "Pankaj Tomar",
-//               "body": "Pankaj Tomar is the best Developer",
-//           }
-//     const responseData = { message: 'Data posted successfully' };
-//     mock.onPost(POST_API_URL, requestData).reply(200, responseData);
-//     const data = await postAPI(requestData);
-//     expect(data).toEqual(responseData);
-//   });
+  test('testing POST Api', async () => {
+    const requestData = {
+              "title": "Pankaj Tomar",
+              "body": "Pankaj Tomar is the best Developer",
+          }
+    const responseData = { message: 'Data posted successfully' };
+    mock.onPost(POST_API_URL, requestData).reply(200, responseData);
+    const data = await postAPI(requestData);
+    expect(data).toEqual(responseData);
+  });
 
-//   test('testing POST api error', async () => {     
-//     const errorResponse = { message: 'Error occurred' };
-//     mock.onPost(POST_API_URL).reply(500, errorResponse);
-//     try {
-//       await postAPI();
-//     } catch (error) {
-//       expect(error.message).toEqual('Request failed with status code 500');
-//     }
-//   });
-// });
+  test('testing POST api error', async () => {     
+    const errorResponse = { message: 'Error occurred' };
+    mock.onPost(POST_API_URL).reply(500, errorResponse);
+    try {
+      await postAPI();
+    } catch (error) {
+      expect(error.message).toEqual('Request failed with status code 500');
+    }
+  });
+});
 // -----------------------------------------------------------------
