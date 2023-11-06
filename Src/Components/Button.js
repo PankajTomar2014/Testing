@@ -52,10 +52,11 @@ const styles = StyleSheet.create({
   touchStyle: {
     alignSelf: 'center',
     borderRadius: 5,
+    marginVertical:10,
     justifyContent: 'center',
     alignItems: 'center',
     height: 50,
-    width: '100%',
+    width: '85%',
     backgroundColor: '#0841A0',
   },
   touchText: {
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
     marginVertical:5,
     alignItems:"center",
     height: 50,
-    width: '100%',
+    width: '85%',
     alignSelf:"center",
     justifyContent:"space-between"
   },
